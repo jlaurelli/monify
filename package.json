@@ -1,0 +1,33 @@
+{
+  "name": "monify",
+  "version": "1.0.0",
+  "description": "Monify: A Market Analyzer",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-react": "^6.5.0",
+    "jquery": "^2.2.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.13",
+    "webpack-bundle-tracker": "0.0.93"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlaurelli/monify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlaurelli/monify/issues"
+  },
+  "homepage": "https://github.com/jlaurelli/monify#readme"
+}

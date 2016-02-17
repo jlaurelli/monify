@@ -1,5 +1,8 @@
 # Project-specific directories
 **/configs
+**/node_modules
+**/assets/bundles
+webpack-stats.json
 
 # IDE / text editor files
 *.sublime-project
