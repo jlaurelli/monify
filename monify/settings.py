@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'webpack_loader',
+    'market_analyzer',
 ]
 
 MIDDLEWARE_CLASSES = [
