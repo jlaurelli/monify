@@ -2,7 +2,9 @@
 **/configs
 **/node_modules
 **/assets/bundles
-webpack-stats.json
+webpack-stats*.json
+server.js
+webpack.local.config.js
 
 # IDE / text editor files
 *.sublime-project

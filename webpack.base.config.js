@@ -11,25 +11,13 @@ module.exports = {
 
     output: {
         path: path.resolve("./assets/bundles/"),
-        filename: "[name]-[hash].js",
+        filename: "[name]-[hash].js"
     },
 
-    plugins: [
-        new BundleTracker({filename: "./webpack-stats.json"}),
-    ],
+    plugins: [],
 
     module: {
-        loaders: [
-            // Transforms JSX into JS
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: "babel-loader",
-                query: {
-                    presets: ["react"]
-                }
-            },
-        ],
+        loaders: []
     },
 
     resolve: {
