@@ -5,6 +5,7 @@
 webpack-stats*.json
 server.js
 webpack.local.config.js
+**/market_analyzer/migrations
 
 # IDE / text editor files
 *.sublime-project
