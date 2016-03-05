@@ -9,6 +9,12 @@ class Investment(models.Model):
     name = models.CharField(max_length=200)
     current_price = models.DecimalField(max_digits=6, decimal_places=2)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Portfolio(models.Model):
     investment = models.ForeignKey(Investment)
+
+    def __unicode__(self):
+        return str(self.investment)
