@@ -1,5 +1,6 @@
 "use strict";
 
+require("bootstrap-loader");
 var React = require("react");
 var ReactDOM = require("react-dom");
 

@@ -40,6 +40,30 @@ config.module.loaders.push(
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "react-hot"
+    },
+    // For loading Bootstrap's fonts
+    {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader?limit=100000"
+    },
+    {
+        test: /\.(woff2?|svg)$/,
+        loader: "url?limit=10000"
+    },
+    {
+        test: /\.(ttf|eot)$/,
+        loader: "file"
+    },
+    // For sending jQuery to Bootstrap's modules
+    // Bootstrap 3
+    {
+        test: /bootstrap-sass\/assets\/javascripts\//,
+        loader: "imports?jQuery=jquery"
+    },
+    // Bootstrap 4
+    {
+        test: /bootstrap\/dist\/js\/umd\//,
+        loader: "imports?jQuery=jquery"
     }
 );
 
