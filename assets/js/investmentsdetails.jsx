@@ -15,7 +15,7 @@ var InvestmentsListItem = React.createClass({
                 <td>{this.props.investment.current_price}</td>
                 <td>{this.props.investment.change}</td>
                 <td>
-                    <button className="btn btn-danger"
+                    <button className="btn btn-danger btn-xs"
                             onClick={this.deleteInvestment}>delete
                     </button>
                 </td>
@@ -32,7 +32,9 @@ var InvestmentsList = React.createClass({
                     />;
         });
         return (
-            <table id="investments-list">
+            <table id="investments-list"
+                   className="table table-hover"
+            >
                 <thead>
                     <tr>
                         <td>SYMBOL</td>
@@ -56,7 +58,7 @@ var InvestmentsDetails = React.createClass({
             <section className="col-lg-4">
                 <h2>Your Investments:</h2>
                 <button id="add-investment-btn"
-                        className="btn btn-default"
+                        className="btn btn-primary btn-xs btn-block"
                         onClick={this.addInvestment}>Add Investment
                 </button>
                 <InvestmentsList investments={this.props.investments}

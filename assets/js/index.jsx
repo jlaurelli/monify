@@ -33,17 +33,21 @@ var Dashboard = React.createClass({
     },
     render: function() {
         return (
-            <div>
-                <div id="user-controls"
-                     className="pull-right">
-                     <button id="logout-btn"
-                             className="btn btn-warning"
-                             onClick={this.logout}>Logout
-                     </button>
+            <div className="container-fluid">
+                <div className="row">
+                    <div id="user-controls"
+                         className="pull-right">
+                         <button id="logout-btn"
+                                 className="btn btn-warning"
+                                 onClick={this.logout}>Logout
+                         </button>
+                    </div>
                 </div>
-                <InvestmentsDetails investments={this.state.investments}
-                />
-                <PortfolioDetails />
+                <div className="row">
+                    <InvestmentsDetails investments={this.state.investments}
+                    />
+                    <PortfolioDetails />
+                </div>
             </div>
         );
     }
