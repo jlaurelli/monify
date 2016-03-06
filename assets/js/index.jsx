@@ -8,26 +8,39 @@ var PortfolioDetails = require("./portfoliodetails");
 
 
 var Dashboard = React.createClass({
-    render: function() {
-        var mockData = {
+    getInitialState: function() {
+        return {
             investments: [
                 {
                     symbol: "GOOG",
                     name: "Google",
-                    current_price: 123.45
+                    current_price: 123.45,
+                    change: "+0.02%"
                 },
                 {
                     symbol: "FAKE",
                     name: "FakePlace",
-                    current_price: 678.90
+                    current_price: 678.90,
+                    change: "-0.04%"
                 }
             ]
         };
-
-        var investments = mockData.investments;
+    },
+    logout: function(evt) {
+        evt.preventDefault();
+        console.debug("logging out");
+    },
+    render: function() {
         return (
             <div>
-                <InvestmentsDetails investments={investments}
+                <div id="user-controls"
+                     className="pull-right">
+                     <button id="logout-btn"
+                             className="btn btn-warning"
+                             onClick={this.logout}>Logout
+                     </button>
+                </div>
+                <InvestmentsDetails investments={this.state.investments}
                 />
                 <PortfolioDetails />
             </div>

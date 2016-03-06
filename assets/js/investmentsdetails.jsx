@@ -13,6 +13,7 @@ var InvestmentsListItem = React.createClass({
             <tr>
                 <td>{this.props.investment.symbol}</td>
                 <td>{this.props.investment.current_price}</td>
+                <td>{this.props.investment.change}</td>
                 <td>
                     <button className="btn btn-danger"
                             onClick={this.deleteInvestment}>delete
@@ -36,6 +37,7 @@ var InvestmentsList = React.createClass({
                     <tr>
                         <td>SYMBOL</td>
                         <td>CURRENT PRICE</td>
+                        <td>CHANGE</td>
                     </tr>
                 </thead>
                 <tbody>{investmentsItems}</tbody>
