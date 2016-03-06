@@ -4,11 +4,20 @@ var React = require("react");
 
 
 var InvestmentsListItem = React.createClass({
+    deleteInvestment: function(evt) {
+        evt.preventDefault();
+        console.debug("Deleting investment");
+    },
     render: function() {
         return (
             <tr>
                 <td>{this.props.investment.symbol}</td>
                 <td>{this.props.investment.current_price}</td>
+                <td>
+                    <button className="btn btn-danger"
+                            onClick={this.deleteInvestment}>delete
+                    </button>
+                </td>
             </tr>
         );
     }
@@ -22,29 +31,35 @@ var InvestmentsList = React.createClass({
                     />;
         });
         return (
-            <div>
-                <h2>Your Investments:</h2>
-                <table id="investments-list">
-                    <thead>
-                        <tr>
-                            <td>SYMBOL</td>
-                            <td>CURRENT PRICE</td>
-                        </tr>
-                    </thead>
-                    <tbody>{investmentsItems}</tbody>
-                </table>
-            </div>
+            <table id="investments-list">
+                <thead>
+                    <tr>
+                        <td>SYMBOL</td>
+                        <td>CURRENT PRICE</td>
+                    </tr>
+                </thead>
+                <tbody>{investmentsItems}</tbody>
+            </table>
         );
     }
 });
 
 var InvestmentsDetails = React.createClass({
+    addInvestment: function(evt) {
+        evt.preventDefault();
+        console.debug("Adding investment");
+    },
     render: function() {
         return (
-            <div className="col-lg-4">
+            <section className="col-lg-4">
+                <h2>Your Investments:</h2>
+                <button id="add-investment-btn"
+                        className="btn btn-default"
+                        onClick={this.addInvestment}>Add Investment
+                </button>
                 <InvestmentsList investments={this.props.investments}
                 />
-            </div>
+            </section>
         );
     }
 });
