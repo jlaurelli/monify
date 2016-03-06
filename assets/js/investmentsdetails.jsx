@@ -16,7 +16,10 @@ var InvestmentsListItem = React.createClass({
                 <td>{this.props.investment.change}</td>
                 <td>
                     <button className="btn btn-danger btn-xs"
-                            onClick={this.deleteInvestment}>delete
+                            aria-label="Delete investment"
+                            onClick={this.deleteInvestment}>
+                        <span className="glyphicon glyphicon-trash"
+                              aria-hidden="true"></span>
                     </button>
                 </td>
             </tr>

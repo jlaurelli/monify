@@ -43,16 +43,16 @@ config.module.loaders.push(
     },
     // For loading Bootstrap's fonts
     {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: "url-loader?limit=100000"
-    },
-    {
-        test: /\.(woff2?|svg)$/,
+        test: /\.woff2(\?\S*)?$/,
         loader: "url?limit=10000"
     },
     {
         test: /\.(ttf|eot)$/,
         loader: "file"
+    },
+    {
+        test: /\.(png|woff|svg)$/,
+        loader: "url-loader?limit=100000"
     },
     // For sending jQuery to Bootstrap's modules
     // Bootstrap 3
