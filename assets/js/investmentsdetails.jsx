@@ -61,8 +61,10 @@ var InvestmentsDetails = React.createClass({
             <section className="col-lg-4">
                 <h2>Your Investments:</h2>
                 <button id="add-investment-btn"
-                        className="btn btn-primary btn-xs btn-block"
-                        onClick={this.addInvestment}>Add Investment
+                        className="btn btn-primary btn-sm btn-block"
+                        onClick={this.addInvestment}>
+                    <span className="glyphicon glyphicon-plus-sign"
+                          aria-hidden="true"></span> Add Investment
                 </button>
                 <InvestmentsList investments={this.props.investments}
                 />
