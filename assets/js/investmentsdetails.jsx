@@ -59,7 +59,7 @@ var InvestmentsDetails = React.createClass({
     render: function() {
         return (
             <section className="col-lg-4">
-                <h2>Your Investments:</h2>
+                <h2>Investments:</h2>
                 <button id="add-investment-btn"
                         className="btn btn-primary btn-sm btn-block"
                         onClick={this.addInvestment}>

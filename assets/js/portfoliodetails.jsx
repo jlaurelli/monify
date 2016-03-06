@@ -2,27 +2,21 @@
 
 var React = require("react");
 
-
-var PortfolioChart = React.createClass({
-    render: function() {
-        return (
-            <img height="500px"
-                 width="500px"
-                 style={{border: "black solid 1px"}}
-                 alt="PLACEHOLDER CHART">
-            </img>
-        );
-    }
-});
+var PortfolioChart = require("./portfoliochart");
 
 
 var PortfolioDetails = React.createClass({
     render: function() {
         return (
             <section className="col-lg-8">
-                <h2>Your Porfolio Performance:</h2>
-                <div>
-                    <PortfolioChart />
+                <h2>Porfolio:</h2>
+                <div className="panel panel-default">
+                <div className="panel-heading">
+                     <h3 className="panel-title">Recent Porfolio Performance</h3>
+                </div>
+                    <div className="panel-body">
+                        <PortfolioChart />
+                    </div>
                 </div>
             </section>
         );
