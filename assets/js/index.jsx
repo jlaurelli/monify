@@ -3,7 +3,7 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 
-var InvestmentList = require("./investmentslist");
+var InvestmentsDetails = require("./investmentsdetails");
 var PortfolioDetails = require("./portfoliodetails");
 
 
@@ -27,7 +27,7 @@ var Dashboard = React.createClass({
         var investments = mockData.investments;
         return (
             <div>
-                <InvestmentList investments={investments}
+                <InvestmentsDetails investments={investments}
                 />
                 <PortfolioDetails />
             </div>
