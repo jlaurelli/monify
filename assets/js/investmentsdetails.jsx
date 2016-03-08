@@ -3,6 +3,47 @@
 var React = require("react");
 
 
+var AddInvestmentModal = React.createClass({
+    addInvestment: function(evt) {
+        evt.preventDefault();
+        console.debug("Adding investment");
+    },
+    render: function() {
+        return (
+            <div id="add-investment-modal"
+                 className="modal fade"
+                 tabIndex="-1"
+                 role="dialog">
+                <div className="modal-dialog modal-sm">
+                    <div className="modal-content">
+                        <form>
+                            <div className="modal-header">
+                                <h4 id="add-investment-modal-title"
+                                    className="modal-title">Add Investment</h4>
+                            </div>
+                            <div className="modal-body">
+                                <div className="form-group">
+                                    <label>Symbol</label>
+                                    <input id="investment-symbol"
+                                           className="form-control" />
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button"
+                                        className="btn btn-default"
+                                        data-dismiss="modal">Close</button>
+                                <button type="button"
+                                        className="btn btn-primary"
+                                        onClick={this.addInvestment}>Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+});
+
 var InvestmentsListItem = React.createClass({
     deleteInvestment: function(evt) {
         evt.preventDefault();
@@ -52,22 +93,20 @@ var InvestmentsList = React.createClass({
 });
 
 var InvestmentsDetails = React.createClass({
-    addInvestment: function(evt) {
-        evt.preventDefault();
-        console.debug("Adding investment");
-    },
     render: function() {
         return (
             <section className="col-lg-4">
                 <h2>Investments:</h2>
                 <button id="add-investment-btn"
                         className="btn btn-primary btn-sm btn-block"
-                        onClick={this.addInvestment}>
+                        data-toggle="modal"
+                        data-target="#add-investment-modal">
                     <span className="glyphicon glyphicon-plus-sign"
                           aria-hidden="true"></span> Add Investment
                 </button>
                 <InvestmentsList investments={this.props.investments}
                 />
+                <AddInvestmentModal />
             </section>
         );
     }
