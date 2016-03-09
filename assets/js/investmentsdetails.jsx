@@ -44,6 +44,41 @@ var AddInvestmentModal = React.createClass({
     }
 });
 
+
+var DeleteInvestmentModal = React.createClass({
+    confirm: function(evt) {
+        evt.preventDefault();
+        console.debug("Deleting investment");
+    },
+    render: function() {
+        return (
+            <div id="delete-investment-modal"
+                 className="modal fade"
+                 tabIndex="-1"
+                 role="dialog">
+                <div className="modal-dialog modal-sm">
+                    <div className="modal-content">
+                        <form>
+                            <div className="modal-header">
+                                <h4 id="add-investment-modal-title"
+                                    className="modal-title">Are you sure?</h4>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button"
+                                        className="btn btn-default"
+                                        data-dismiss="modal">Close</button>
+                                <button type="button"
+                                        className="btn btn-primary"
+                                        onClick={this.confirm}>Confirm</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+});
+
 var InvestmentsListItem = React.createClass({
     deleteInvestment: function(evt) {
         evt.preventDefault();
@@ -58,7 +93,8 @@ var InvestmentsListItem = React.createClass({
                 <td>
                     <button className="btn btn-danger btn-xs"
                             aria-label="Delete investment"
-                            onClick={this.deleteInvestment}>
+                            data-toggle="modal"
+                            data-target="#delete-investment-modal">
                         <span className="glyphicon glyphicon-trash"
                               aria-hidden="true"></span>
                     </button>
@@ -107,6 +143,7 @@ var InvestmentsDetails = React.createClass({
                 <InvestmentsList investments={this.props.investments}
                 />
                 <AddInvestmentModal />
+                <DeleteInvestmentModal />
             </section>
         );
     }
