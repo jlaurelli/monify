@@ -20,7 +20,7 @@ class StockPrice(models.Model):
 
 class Investment(models.Model):
     stock = models.ForeignKey(Stock)
-    shares = models.PositiveIntegerField()
+    shares = models.PositiveIntegerField(default=100)
 
     def __unicode__(self):
         return str(self.stock, self.shares)
